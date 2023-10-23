@@ -40,21 +40,35 @@ using LINQ;
 //Console.WriteLine($"Ortacha yoshi : {result2}");
 
 
-var result3 = Student.GetAllStudents().Any(x => x.Talimshakli == "Sirtqi");
-if(result3 == true)
+//var result3 = Student.GetAllStudents().Any(x => x.Talimshakli == "Sirtqi");
+//if(result3 == true)
+//{
+//    var result = from student in Student.GetAllStudents()
+//                 where student.Talimshakli == "Sirtqi"
+//                 select student;
+//    foreach(var student in result)
+//    {
+//        Console.WriteLine($"{student.LastName} -- " +
+//            $"{student.FirstName} --" +
+//            $"{student.Contract} -- " +
+//            $"{student.Age} -- " +
+//            $"{student.Course} --" +
+//            $"{student.Talimshakli}");
+//    }
+
+
+//}
+var result = from teacher in Teacher.GetAllTeachers()
+             join student in Student.GetAllStudents() on teacher.Talimshakli equals student.Talimshakli into studentGroup
+             select new
+             {
+                 TeacherName = teacher.FirstName,
+                 TeachingCourses = studentGroup.Select(s => s.FirstName).ToList()
+             };
+
+foreach (var item in result)
 {
-    var result = from student in Student.GetAllStudents()
-                 where student.Talimshakli == "Sirtqi"
-                 select student;
-    foreach(var student in result)
-    {
-        Console.WriteLine($"{student.LastName} -- " +
-            $"{student.FirstName} --" +
-            $"{student.Contract} -- " +
-            $"{student.Age} -- " +
-            $"{student.Course} --" +
-            $"{student.Talimshakli}");
-    }
-        
-        
+    Console.WriteLine($"Teacher: {item.TeacherName}");
+    Console.WriteLine($"Teaching Courses: {string.Join(", ", item.TeacherName)}");
+    Console.WriteLine();
 }
