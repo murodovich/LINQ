@@ -11,6 +11,31 @@ namespace HomeTask
     {
         public static void Run()
         {
+            // Task 11
+
+
+            //List<int> list = new List<int>() { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+
+            //var son  = from x in list
+            //           where x%3 == 0
+            //           select x;
+
+            //foreach (var x in son)
+            //{
+            //    Console.WriteLine(x);
+            //}
+
+            // Task 12
+
+            //string text = "Input the string : this IS a STRING";
+            //var texts = text.Split(' ');
+            //var result = texts.Where(x => String.Equals(x, x.ToUpper()));
+
+            //foreach ( var t in result )
+            //{
+            //    Console.WriteLine(t);
+            //}
+
 
             // Task 13
 
@@ -216,7 +241,7 @@ namespace HomeTask
 
 
             // Task 30
-            
+
             var nimadur  = (from c  in Student.GetAllStudents()
                            select c.FirstName).Distinct().OrderBy(x => x);
 
@@ -225,6 +250,8 @@ namespace HomeTask
                 Console.WriteLine(student);
             }
             
+
+
 
         }
     }

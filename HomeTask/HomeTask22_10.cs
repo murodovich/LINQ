@@ -149,8 +149,6 @@ namespace LINQ
             //}
 
 
-            // Task 13 
-
 
 
 
