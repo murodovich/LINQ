@@ -136,8 +136,23 @@ namespace LINQ
             //{
             //    Console.WriteLine(x);
             //}
-            
-           
+
+            // Task 12
+
+            //string text = "Input the string : this IS a STRING";
+            //var texts = text.Split(' ');
+            //var result = texts.Where(x => String.Equals(x, x.ToUpper()));
+
+            //foreach ( var t in result )
+            //{
+            //    Console.WriteLine(t);
+            //}
+
+
+            // Task 13 
+
+
+
 
 
 
